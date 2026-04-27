@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criptomonedas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Lista de Criptomonedas</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Símbolo</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cambio 24h (%)</th>
+            <th>Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cripto in criptos %}
+        <tr>
+            <td>{{ cripto.symbol }}</td>
+            <td>{{ cripto.name }}</td>
+            <td>${{ cripto.price_usd }}</td>                                                                                                                                                                                         
+            <td>{{ cripto.percent_change_24h }}%</td>
+            <td>
+                <a href="/cripto/{{ cripto.id }}">Ver detalle</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

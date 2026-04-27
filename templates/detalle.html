@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle Cripto</title>
+</head>
+<body>
+
+<h1>{{ cripto.name }} ({{ cripto.symbol }})</h1>
+
+<ul>
+    <li>Precio: ${{ cripto.price_usd }}</li>
+    <li>Market Cap: ${{ cripto.market_cap_usd }}</li>
+    <li>Supply: {{ cripto.csupply }}</li>
+    <li>Max Supply: {{ cripto.msupply }}</li>
+    <li>Cambio 1h: {{ cripto.percent_change_1h }}%</li>
+    <li>Cambio 24h: {{ cripto.percent_change_24h }}%</li>
+    <li>Cambio 7d: {{ cripto.percent_change_7d }}%</li>
+</ul>
+
+<a href="/">⬅ Volver</a>
+
+</body>
+</html>
