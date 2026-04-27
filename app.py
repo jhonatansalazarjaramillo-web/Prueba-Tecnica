@@ -1,5 +1,8 @@
+import os
+
 from flask import Flask, render_template
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -23,4 +26,4 @@ def detalle(id):
     return render_template('detalle.html', cripto=cripto)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
